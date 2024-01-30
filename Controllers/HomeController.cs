@@ -28,24 +28,62 @@ namespace JokesWebApp_ENERO.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+        public IActionResult UploadVoucher()
+        {
+            return View();
+        }
 
         [HttpPost]
         public async Task<IActionResult> UploadVoucher(IFormFile file)
         {
-            if (file != null && file.Length > 0)
+            // Validar el tamaño y tipo del archivo
+            if (file == null || file.Length == 0 || file.Length > 5000000)
             {
-                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads", file.FileName);
-
-                using (var stream = new FileStream(filePath, FileMode.Create))
-                {
-                    await file.CopyToAsync(stream);
-                }
-
-                // Aquí puedes agregar la lógica para procesar el archivo y verificar el voucher
+                ViewBag.Error = "Archivo inválido. Por favor, asegúrate de que el tamaño sea menor a 5 MB.";
+                return View();
             }
 
-            return RedirectToAction("Index"); // Redirige a la vista que prefieras después de la subida
+            string[] permittedExtensions = { ".pdf", ".jpg", ".png" };
+            var ext = Path.GetExtension(file.FileName).ToLowerInvariant();
+            if (string.IsNullOrEmpty(ext) || !permittedExtensions.Contains(ext))
+            {
+                ViewBag.Error = "Tipo de archivo no permitido. Solo se aceptan PDF, JPG y PNG.";
+                return View();
+            }
+
+            // Guardar el archivo
+            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads", file.FileName);
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                await file.CopyToAsync(stream);
+            }
+
+            // Procesar y validar el voucher
+            bool isValidVoucher = ProcessAndValidateVoucher(filePath);
+
+            if (isValidVoucher)
+            {
+                // Lógica para actualizar la base de datos
+                // Ejemplo: Marcar una factura como pagada
+            }
+            else
+            {
+                ViewBag.Error = "El voucher subido no es válido.";
+                return View();
+            }
+
+            return RedirectToAction("Index"); // O redirigir a una página de confirmación
         }
+
+        private bool ProcessAndValidateVoucher(string filePath)
+        {
+            // Lógica para procesar y validar el voucher
+            // Ejemplo: Verificar que el archivo contenga cierto texto
+            string content = File.ReadAllText(filePath);
+            return content.Contains("Código de Validación Esperado");
+        }
+
+
 
     }
 }

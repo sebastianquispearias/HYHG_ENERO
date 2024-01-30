@@ -245,6 +245,10 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "C:\\Users\\sebas\\OneDrive\\Escritorio\\proyectos\\JokesWebApp ENERO\\wwwroot\\uploads\\kl.txt",
+      "PackagePath": "staticwebassets\\uploads\\kl.txt"
+    },
+    {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.JokesWebApp ENERO.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

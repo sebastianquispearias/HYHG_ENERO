@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8mHtVeSuwYcrYEMkoy489hO3BBPVP0Dvo2NJtWcAvgE=",
+  "Hash": "UQB3kYDY/xDMHRO2jICXdmjRX8wFqa9vb2PYPUnQ4f0=",
   "Source": "JokesWebApp ENERO",
   "BasePath": "_content/JokesWebApp ENERO",
   "Mode": "Default",
@@ -2333,6 +2333,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\sebas\\OneDrive\\Escritorio\\proyectos\\JokesWebApp ENERO\\wwwroot\\uploads\\kl.txt",
+      "SourceId": "JokesWebApp ENERO",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\sebas\\OneDrive\\Escritorio\\proyectos\\JokesWebApp ENERO\\wwwroot\\",
+      "BasePath": "_content/JokesWebApp ENERO",
+      "RelativePath": "uploads/kl.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\kl.txt"
     }
   ]
 }
