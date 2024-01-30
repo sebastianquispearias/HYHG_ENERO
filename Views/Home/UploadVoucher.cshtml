@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Subir Voucher";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-controller="Home" asp-action="UploadVoucher" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="file">Subir Voucher:</label>
+        <input type="file" class="form-control" name="file" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Subir</button>
+</form>

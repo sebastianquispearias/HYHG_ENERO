@@ -28,5 +28,24 @@ namespace JokesWebApp_ENERO.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        [HttpPost]
+        public async Task<IActionResult> UploadVoucher(IFormFile file)
+        {
+            if (file != null && file.Length > 0)
+            {
+                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads", file.FileName);
+
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await file.CopyToAsync(stream);
+                }
+
+                // Aquí puedes agregar la lógica para procesar el archivo y verificar el voucher
+            }
+
+            return RedirectToAction("Index"); // Redirige a la vista que prefieras después de la subida
+        }
+
     }
 }

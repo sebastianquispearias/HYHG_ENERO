@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JokesWebApp ENERO")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+55871ab91d0da0a20d6a292abe0b722cce26216a")]
 [assembly: System.Reflection.AssemblyProductAttribute("JokesWebApp ENERO")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JokesWebApp ENERO")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
